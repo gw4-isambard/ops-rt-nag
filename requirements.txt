@@ -1,0 +1,4 @@
+rt
+json
+requests
+configparser
