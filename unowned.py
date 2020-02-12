@@ -17,7 +17,7 @@ tracker = rt.Rt(url + path, username, password)
 tracker.login()
 unowned_query = "Owner = 'Nobody' AND Status = '__Active__'"
 tickets = tracker.search(
-    Queue=rt.ALL_QUEUES, order="Status", raw_query=unowned_query, Format="s"
+    Queue=rt.ALL_QUEUES, order="-Created", raw_query=unowned_query, Format="s"
 )
 if tickets:
     message = f"There are currently {len(tickets)} unowned tickets:\n"
