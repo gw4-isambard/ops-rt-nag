@@ -20,7 +20,7 @@ tickets = tracker.search(
     Queue=rt.ALL_QUEUES, order="-Created", raw_query=unowned_query, Format="s"
 )
 if tickets:
-    message = f"There are currently {len(tickets)} unowned tickets:\n"
+    message = f"The number of unowned tickets is currently {len(tickets)}:\n"
     for ticket in tickets:
         message += f"- <{url}Ticket/Display.html?id={ticket['numerical_id']}|{ticket['numerical_id']} - {ticket['Subject']}>\n"
     payload = {"text": message}
